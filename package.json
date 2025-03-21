@@ -1,0 +1,32 @@
+{
+  "name": "remind",
+  "version": "1.0.0",
+  "description": "notification creation",
+  "author": "Georgi Zarkya",
+  "scripts": {
+    "lint": "eslint ./src --max-warnings=0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "printWidth": 120,
+    "tabWidth": 2,
+    "endOfLine": "lf"
+  },
+  "devDependencies": {
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.5.3"
+  },
+  "dependencies": {
+    "@eslint/eslintrc": "^3.3.0",
+    "@eslint/js": "^9.22.0",
+    "@typescript-eslint/eslint-plugin": "^8.27.0",
+    "eslint-import-resolver-typescript": "^4.2.2",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "typescript-eslint": "^8.27.0"
+  }
+}
