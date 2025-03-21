@@ -29,6 +29,7 @@
     "@nestjs/common": "^11.0.12",
     "@nestjs/core": "^11.0.12",
     "@nestjs/platform-fastify": "^11.0.12",
+    "@nestjs/swagger": "^11.0.7",
     "@types/dotenv": "^8.2.3",
     "@types/node": "^22.13.11",
     "@typescript-eslint/eslint-plugin": "^8.27.0",
@@ -39,7 +40,6 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "eslint-plugin-unused-imports": "^4.1.4",
-    "ts-node": "^10.9.2",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.27.0"
   }

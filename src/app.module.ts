@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
+import { ReminderModule } from './modules/reminder/reminder.module';
 
 @Module({
-  imports: [],
+  imports: [ReminderModule],
 })
 export class AppModule {}
