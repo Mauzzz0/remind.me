@@ -1,13 +1,11 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsDate, IsEmail, IsNotEmpty, IsNumber } from 'class-validator';
+import { Type } from 'class-transformer';
+import { IsDate, IsEmail, IsNotEmpty, IsString } from 'class-validator';
 
-export class ReminderDto {
-  @ApiProperty({ example: 1 })
-  @IsNumber()
-  id: number;
-
+export class ReminderRequestBodyDto {
   @ApiProperty({ example: 'To go for an interview tomorrow' })
   @IsNotEmpty()
+  @IsString()
   description: string;
 
   @ApiProperty({ example: 'example@mail.ru' })
@@ -16,5 +14,6 @@ export class ReminderDto {
 
   @ApiProperty({ example: '2025-01-24T13:24:32.320Z' })
   @IsDate()
-  date: string;
+  @Type(() => Date)
+  date: Date;
 }
