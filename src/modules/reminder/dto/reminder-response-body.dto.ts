@@ -11,5 +11,11 @@ export class ReminderResponseBodyDto {
   email: string;
 
   @ApiProperty({ example: '2025-01-24T13:24:32.320Z' })
-  date: string;
+  date: Date;
+
+  @ApiProperty({ example: '2025-01-24T13:24:32.320Z' })
+  createdAt: string;
+
+  @ApiProperty({ example: '2025-01-24T13:24:32.320Z' })
+  updatedAt: string;
 }

@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { ReminderRequestBodyDto } from './dto/reminder-request-body.dto';
+import { ReminderModel } from '../../database/postgres/models';
+import { ReminderCreateRequestBodyDto } from './dto/reminder-create-request-body.dto';
 
 @Injectable()
 export class ReminderService {
-  async create(dto: ReminderRequestBodyDto) {
-    return dto;
+  async create(dto: ReminderCreateRequestBodyDto): Promise<ReminderModel> {
+    return await ReminderModel.create({ ...dto });
   }
 }

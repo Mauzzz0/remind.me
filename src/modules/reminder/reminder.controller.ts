@@ -1,6 +1,6 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { ApiBody, ApiCreatedResponse, ApiOperation } from '@nestjs/swagger';
-import { ReminderRequestBodyDto } from './dto/reminder-request-body.dto';
+import { ApiCreatedResponse, ApiOperation } from '@nestjs/swagger';
+import { ReminderCreateRequestBodyDto } from './dto/reminder-create-request-body.dto';
 import { ReminderResponseBodyDto } from './dto/reminder-response-body.dto';
 import { ReminderService } from './reminder.service';
 
@@ -10,9 +10,8 @@ export class ReminderController {
 
   @ApiOperation({ summary: 'Создание напоминания' })
   @ApiCreatedResponse({ type: ReminderResponseBodyDto })
-  @ApiBody({ type: ReminderRequestBodyDto })
   @Post()
-  async create(@Body() dto: ReminderRequestBodyDto): Promise<ReminderRequestBodyDto> {
+  async create(@Body() dto: ReminderCreateRequestBodyDto) {
     return this.reminderService.create(dto);
   }
 }

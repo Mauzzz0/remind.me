@@ -8,4 +8,4 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgrespassword
-      POSTGRES_DB: nest-reminder
+      POSTGRES_DB: reminder
