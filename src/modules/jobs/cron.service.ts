@@ -1,7 +1,7 @@
 import { Injectable, Logger } from '@nestjs/common';
+import { Cron, CronExpression } from '@nestjs/schedule';
 import { Op } from 'sequelize';
 import { ReminderModel } from '../../database/postgres/models';
-import { Cron, CronExpression } from '@nestjs/schedule';
 
 @Injectable()
 export class CronService {
