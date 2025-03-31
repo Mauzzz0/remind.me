@@ -21,4 +21,7 @@ export class ReminderResponseBodyDto {
 
   @ApiProperty({ example: false })
   isSent: boolean;
+
+  @ApiProperty({ example: null })
+  sentAt: Date;
 }
