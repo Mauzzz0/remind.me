@@ -18,4 +18,10 @@ export class ReminderResponseBodyDto {
 
   @ApiProperty({ example: '2025-01-24T13:24:32.320Z' })
   updatedAt: string;
+
+  @ApiProperty({ example: false })
+  isSent: boolean;
+
+  @ApiProperty({ example: null })
+  sentAt: Date;
 }

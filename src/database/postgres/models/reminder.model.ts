@@ -18,4 +18,10 @@ export class ReminderModel extends Model {
 
   @Column({ type: DataType.DATE, allowNull: false })
   public date: Date;
+
+  @Column({ type: DataType.BOOLEAN, allowNull: false, defaultValue: false })
+  public isSent: boolean;
+
+  @Column({ type: DataType.DATE, allowNull: true })
+  public sentAt: Date;
 }
