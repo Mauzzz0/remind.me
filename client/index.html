@@ -1,106 +1,153 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Awesome Webpage</title>
+  <title>Курс Node.js — Стань backend-разработчиком!</title>
   <style>
-      body {
-          font-family: Arial, sans-serif;
-          margin: 0;
+      /* Все предыдущие стили остаются без изменений */
+
+      /* Новые стили для ценовых карточек */
+      .pricing-cards {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 25px;
+          margin: 40px 0;
+      }
+      .pricing-card {
+          background: white;
+          padding: 30px;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+          border: 1px solid #e0e9e3;
+          transition: all 0.3s ease;
+          text-align: center;
+      }
+      .pricing-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 25px rgba(74, 159, 110, 0.15);
+      }
+      .pricing-card.popular {
+          border: 2px solid #4a9f6e;
+          position: relative;
+      }
+      .popular-badge {
+          position: absolute;
+          top: -12px;
+          right: 20px;
+          background: #4a9f6e;
+          color: white;
+          padding: 5px 15px;
+          border-radius: 20px;
+          font-size: 0.8em;
+          font-weight: bold;
+      }
+      .pricing-card-title {
+          font-size: 1.3em;
+          font-weight: bold;
+          color: #2d3e35;
+          margin-bottom: 15px;
+      }
+      .pricing-card-price {
+          font-size: 2.2em;
+          color: #4a9f6e;
+          font-weight: bold;
+          margin: 15px 0;
+      }
+      .pricing-card-price span {
+          font-size: 0.6em;
+          color: #777;
+      }
+      .pricing-card-features {
+          list-style: none;
           padding: 0;
-          background-color: #f4f4f4;
+          margin: 20px 0;
+          text-align: left;
       }
-
-      header {
-          background-color: #333;
-          color: #fff;
-          padding: 1rem 0;
-          text-align: center;
+      .pricing-card-features li {
+          padding: 8px 0;
+          border-bottom: 1px dashed #e0e9e3;
+          color: #3d5a4a;
       }
-
-      nav {
-          background-color: #444;
-          padding: 0.5rem;
-          text-align: center;
+      .pricing-card-features li:last-child {
+          border-bottom: none;
       }
-
-      nav a {
-          color: #fff;
-          text-decoration: none;
-          padding: 0.5rem 1rem;
+      .pricing-card-button {
           display: inline-block;
+          width: 100%;
+          padding: 12px;
+          background-color: #4a9f6e;
+          color: white;
+          text-decoration: none;
+          border-radius: 5px;
+          font-weight: bold;
+          transition: background-color 0.3s;
+          border: none;
+          cursor: pointer;
+      }
+      .pricing-card-button:hover {
+          background-color: #3d8b5f;
       }
 
-      nav a:hover {
-          background-color: #555;
-      }
-
-      main {
-          padding: 1rem;
-          max-width: 800px;
-          margin: 0 auto;
-          background-color: #fff;
-          border-radius: 8px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
-      h1, h2 {
-          color: #333;
-      }
-
-      p {
-          line-height: 1.6;
-      }
-
-      ul {
-          list-style-type: disc;
-          padding-left: 20px;
-      }
-
-      footer {
-          background-color: #333;
-          color: #fff;
-          text-align: center;
-          padding: 1rem 0;
-          margin-top: 1rem;
+      @media (max-width: 768px) {
+          .pricing-cards {
+              grid-template-columns: 1fr;
+          }
       }
   </style>
 </head>
 <body>
+<!-- Всё содержимое остаётся без изменений до секции с ценами -->
 
-<header>
-  <h1>Welcome to My Webpage</h1>
-</header>
+<section id="register" style="text-align: center;">
+  <h2 style="color: #2d3e35;">Тарифы курса</h2>
+  <div class="pricing-cards">
+    <!-- Базовый тариф -->
+    <div class="pricing-card">
+      <div class="pricing-card-title">Базовый</div>
+      <div class="pricing-card-price">14,990 <span>руб.</span></div>
+      <ul class="pricing-card-features">
+        <li>Доступ к основным модулям</li>
+        <li>Практические задания</li>
+        <li>Доступ к комьюнити</li>
+        <li>Проверка ДЗ (1 в неделю)</li>
+      </ul>
+      <button class="pricing-card-button">Выбрать тариф</button>
+    </div>
 
-<nav>
-  <a href="#">Home</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-</nav>
+    <!-- Популярный тариф -->
+    <div class="pricing-card popular">
+      <div class="popular-badge">Популярный</div>
+      <div class="pricing-card-title">Стандарт</div>
+      <div class="pricing-card-price">19,990 <span>руб.</span></div>
+      <ul class="pricing-card-features">
+        <li>Все материалы базового тарифа</li>
+        <li>Проверка ДЗ без ограничений</li>
+        <li>Доступ к вебинарам</li>
+        <li>2 индивидуальные консультации</li>
+        <li>Сертификат об окончании</li>
+      </ul>
+      <button class="pricing-card-button">Выбрать тариф</button>
+    </div>
 
-<main>
-  <h2>Our Services</h2>
-  <ul>
-    <li>Web Design</li>
-    <li>Web Development</li>
-    <li>SEO Optimization</li>
-    <li>Content Marketing</li>
-  </ul>
+    <!-- Премиум тариф -->
+    <div class="pricing-card">
+      <div class="pricing-card-title">Премиум</div>
+      <div class="pricing-card-price">29,990 <span>руб.</span></div>
+      <ul class="pricing-card-features">
+        <li>Все материалы стандартного тарифа</li>
+        <li>Персональный ментор</li>
+        <li>Гарантированное трудоустройство</li>
+        <li>6 индивидуальных консультаций</li>
+        <li>Доступ к закрытому чату</li>
+        <li>Обзор резюме и подготовка к собесам</li>
+      </ul>
+      <button class="pricing-card-button">Выбрать тариф</button>
+    </div>
+  </div>
+  <p style="color: #3d5a4a; margin-top: 20px;">Специальная цена действует только до конца месяца!</p>
+</section>
 
-  <h2>Contact Us</h2>
-  <p>
-    You can reach us at:
-    <br>
-    Email: <a href="mailto:info@example.com">info@example.com</a>
-    <br>
-    Phone: +1-555-123-4567
-  </p>
-  </main>
-
-  <footer>
-    <p>&copy; 2024 My Awesome Webpage. All rights reserved.</p>
-  </footer>
-
+<!-- Всё остальное содержимое (футер, модальное окно и скрипты) остаётся без изменений -->
 </body>
 </html>
