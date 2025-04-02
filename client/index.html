@@ -43,6 +43,7 @@
           font-weight: bold;
           margin: 20px 0;
           transition: transform 0.3s, background-color 0.3s;
+          cursor: pointer;
       }
       .cta-button:hover {
           background-color: #ff5252;
@@ -103,6 +104,77 @@
           color: #ff6b6b;
           font-weight: bold;
       }
+
+      /* Новые стили для модального окна */
+      .modal {
+          display: none;
+          position: fixed;
+          z-index: 100;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0,0,0,0.7);
+      }
+      .modal-content {
+          background-color: white;
+          margin: 10% auto;
+          padding: 30px;
+          border-radius: 10px;
+          width: 80%;
+          max-width: 500px;
+          box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+          animation: modalFade 0.3s;
+      }
+      @keyframes modalFade {
+          from {opacity: 0; transform: translateY(-50px);}
+          to {opacity: 1; transform: translateY(0);}
+      }
+      .close-btn {
+          float: right;
+          font-size: 24px;
+          cursor: pointer;
+          color: #aaa;
+      }
+      .close-btn:hover {
+          color: #333;
+      }
+      .form-group {
+          margin-bottom: 20px;
+      }
+      .form-group label {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: bold;
+      }
+      .form-group input {
+          width: 100%;
+          padding: 10px;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          font-size: 16px;
+      }
+      .submit-btn {
+          background-color: #6e48aa;
+          color: white;
+          border: none;
+          padding: 12px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+          width: 100%;
+          transition: background-color 0.3s;
+      }
+      .submit-btn:hover {
+          background-color: #9d50bb;
+      }
+      .success-message {
+          display: none;
+          text-align: center;
+          color: #4CAF50;
+          font-weight: bold;
+          margin-top: 20px;
+      }
   </style>
 </head>
 <body>
@@ -110,7 +182,7 @@
   <header>
     <h1>Профессиональный курс по Node.js</h1>
     <p class="subtitle">С нуля до backend-разработчика за 3 месяца</p>
-    <a href="#register" class="cta-button">Записаться сейчас</a>
+    <a href="#" id="registerBtn" class="cta-button">Записаться сейчас</a>
   </header>
 
   <section>
@@ -181,7 +253,7 @@
     <h2>Готовы начать?</h2>
     <p class="price">19,990 руб. <span style="text-decoration: line-through; color: #777; font-size: 0.7em;">24,990 руб.</span></p>
     <p>Специальная цена действует только до конца месяца!</p>
-    <a href="#" class="cta-button">Записаться на курс</a>
+    <a href="#" id="registerBtn2" class="cta-button">Записаться на курс</a>
   </section>
 
   <footer>
@@ -189,5 +261,84 @@
     <p>Телефон: +7 (123) 456-78-90 | Email: info@node-course.ru</p>
   </footer>
 </div>
+
+<!-- Модальное окно регистрации -->
+<div id="registerModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Запись на курс Node.js</h2>
+    <form id="registrationForm">
+      <div class="form-group">
+        <label for="name">Ваше имя:</label>
+        <input type="text" id="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" required>
+      </div>
+      <button type="submit" class="submit-btn">Отправить заявку</button>
+    </form>
+    <div id="successMessage" class="success-message">
+      Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в течение 24 часов.
+    </div>
+  </div>
+</div>
+
+<script>
+  // Получаем элементы DOM
+  const registerBtn = document.getElementById('registerBtn');
+  const registerBtn2 = document.getElementById('registerBtn2');
+  const modal = document.getElementById('registerModal');
+  const closeBtn = document.querySelector('.close-btn');
+  const registrationForm = document.getElementById('registrationForm');
+  const successMessage = document.getElementById('successMessage');
+
+  // Открываем модальное окно при клике на кнопки
+  registerBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = 'block';
+  });
+
+  registerBtn2.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.style.display = 'block';
+  });
+
+  // Закрываем модальное окно
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  // Закрываем при клике вне модального окна
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+
+  // Обработка формы
+  registrationForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Здесь можно добавить отправку данных на сервер
+    // Например, с помощью fetch или XMLHttpRequest
+
+    // Показываем сообщение об успехе
+    registrationForm.style.display = 'none';
+    successMessage.style.display = 'block';
+
+    // Через 3 секунды закрываем модальное окно
+    setTimeout(() => {
+      modal.style.display = 'none';
+      registrationForm.style.display = 'block';
+      successMessage.style.display = 'none';
+      registrationForm.reset();
+    }, 2000);
+  });
+</script>
 </body>
 </html>
