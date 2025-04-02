@@ -212,6 +212,48 @@
           background-color: #e8f3ed;
           border-radius: 6px;
       }
+
+      /* Новые стили для карточек программы */
+      .program-cards {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+          margin: 30px 0;
+      }
+      .program-card {
+          background: white;
+          padding: 25px;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+          border: 1px solid #e0e9e3;
+          transition: all 0.3s ease;
+      }
+      .program-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(74, 159, 110, 0.15);
+          border-color: #c5d9cc;
+      }
+      .program-card-icon {
+          font-size: 1.8em;
+          color: #4a9f6e;
+          margin-bottom: 15px;
+      }
+      .program-card-title {
+          font-weight: bold;
+          color: #2d3e35;
+          margin-bottom: 10px;
+          font-size: 1.1em;
+      }
+      @media (max-width: 900px) {
+          .program-cards {
+              grid-template-columns: repeat(2, 1fr);
+          }
+      }
+      @media (max-width: 600px) {
+          .program-cards {
+              grid-template-columns: 1fr;
+          }
+      }
   </style>
 </head>
 <body>
@@ -272,17 +314,68 @@
 
   <section id="program">
     <h2 style="color: #2d3e35;">Программа курса</h2>
-    <ul style="line-height: 1.8; color: #3d5a4a;">
-      <li>🔹 Основы JavaScript для серверной разработки</li>
-      <li>🔹 Введение в Node.js и npm</li>
-      <li>🔹 Работа с Express.js</li>
-      <li>🔹 Базы данных: MongoDB и PostgreSQL</li>
-      <li>🔹 Аутентификация и авторизация</li>
-      <li>🔹 REST API и GraphQL</li>
-      <li>🔹 Оптимизация и безопасность</li>
-      <li>🔹 Деплой приложений</li>
-      <li>🔹 Работа в команде с Git</li>
-    </ul>
+    <div class="program-cards">
+      <div class="program-card">
+        <div class="program-card-icon">📚</div>
+        <div class="program-card-title">Основы JavaScript</div>
+        <p>ES6+ синтаксис и асинхронное программирование</p>
+      </div>
+      <div class="program-card">
+        <div class="program-card-icon">🟢</div>
+        <div class="program-card-title">Node.js и npm</div>
+        <p>Установка среды и работа с модулями</p>
+      </div>
+      <div class="program-card">
+        <div class="program-card-icon">🚀</div>
+        <div class="program-card-title">Express.js</div>
+        <p>Создание серверов и middleware</p>
+      </div>
+      <div class="program-card">
+        <div class="program-card-icon">🗄️</div>
+        <div class="program-card-title">MongoDB</div>
+        <p>NoSQL через Mongoose ORM</p>
+      </div>
+      <div class="program-card">
+        <div class="program-card-icon">🗃️</div>
+        <div class="program-card-title">PostgreSQL</div>
+        <p>Реляционные БД и Sequelize</p>
+      </div>
+      <div class="program-card">
+        <div class="program-card-icon">🔐</div>
+        <div class="program-card-title">Аутентификация</div>
+        <p>JWT, сессии и OAuth</p>
+      </div>
+      <div class="program-card">
+        <div class="program-card-icon">🌐</div>
+        <div class="program-card-title">REST API</div>
+        <p>Проектирование RESTful сервисов</p>
+      </div>
+      <div class="program-card">
+        <div class="program-card-icon">📊</div>
+        <div class="program-card-title">GraphQL</div>
+        <p>API с Apollo Server</p>
+      </div>
+      <div class="program-card">
+        <div class="program-card-icon">🛡️</div>
+        <div class="program-card-title">Безопасность</div>
+        <p>Защита от уязвимостей</p>
+      </div>
+      <div class="program-card">
+        <div class="program-card-icon">🚢</div>
+        <div class="program-card-title">Деплой</div>
+        <p>Docker, AWS и CI/CD</p>
+      </div>
+      <div class="program-card">
+        <div class="program-card-icon">👥</div>
+        <div class="program-card-title">Git</div>
+        <p>Совместная разработка</p>
+      </div>
+      <div class="program-card">
+        <div class="program-card-icon">🎯</div>
+        <div class="program-card-title">Финальный проект</div>
+        <p>Полноценное backend-приложение</p>
+      </div>
+    </div>
     <p class="bonus">Бонус: 2 месяца подписки на облачный хостинг для ваших проектов!</p>
   </section>
 
