@@ -1,106 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Awesome Webpage</title>
+  <title>Курс Node.js — Стань backend-разработчиком!</title>
   <style>
       body {
-          font-family: Arial, sans-serif;
+          font-family: 'Arial', sans-serif;
           margin: 0;
           padding: 0;
-          background-color: #f4f4f4;
-      }
-
-      header {
-          background-color: #333;
-          color: #fff;
-          padding: 1rem 0;
-          text-align: center;
-      }
-
-      nav {
-          background-color: #444;
-          padding: 0.5rem;
-          text-align: center;
-      }
-
-      nav a {
-          color: #fff;
-          text-decoration: none;
-          padding: 0.5rem 1rem;
-          display: inline-block;
-      }
-
-      nav a:hover {
-          background-color: #555;
-      }
-
-      main {
-          padding: 1rem;
-          max-width: 800px;
-          margin: 0 auto;
-          background-color: #fff;
-          border-radius: 8px;
-          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-
-      h1, h2 {
+          background-color: #f5f5f5;
           color: #333;
       }
-
-      p {
-          line-height: 1.6;
+      .container {
+          max-width: 1000px;
+          margin: 0 auto;
+          padding: 20px;
       }
-
-      ul {
-          list-style-type: disc;
-          padding-left: 20px;
-      }
-
-      footer {
-          background-color: #333;
-          color: #fff;
+      header {
+          background: linear-gradient(135deg, #6e48aa, #9d50bb);
+          color: white;
+          padding: 40px 20px;
           text-align: center;
-          padding: 1rem 0;
-          margin-top: 1rem;
+          border-radius: 10px;
+          margin-bottom: 30px;
+      }
+      h1 {
+          font-size: 2.5em;
+          margin-bottom: 10px;
+      }
+      .subtitle {
+          font-size: 1.2em;
+          opacity: 0.9;
+      }
+      .cta-button {
+          display: inline-block;
+          background-color: #ff6b6b;
+          color: white;
+          padding: 15px 30px;
+          text-decoration: none;
+          border-radius: 50px;
+          font-weight: bold;
+          margin: 20px 0;
+          transition: transform 0.3s, background-color 0.3s;
+      }
+      .cta-button:hover {
+          background-color: #ff5252;
+          transform: scale(1.05);
+      }
+      .features {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          margin: 40px 0;
+      }
+      .feature {
+          flex-basis: 30%;
+          background: white;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+          margin-bottom: 20px;
+          transition: transform 0.3s;
+      }
+      .feature:hover {
+          transform: translateY(-5px);
+      }
+      .feature-icon {
+          font-size: 2em;
+          color: #6e48aa;
+          margin-bottom: 15px;
+      }
+      .testimonials {
+          background: white;
+          padding: 30px;
+          border-radius: 10px;
+          margin: 40px 0;
+          box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      }
+      .testimonial {
+          margin-bottom: 20px;
+          font-style: italic;
+      }
+      .author {
+          font-weight: bold;
+          text-align: right;
+      }
+      footer {
+          text-align: center;
+          padding: 20px;
+          background-color: #333;
+          color: white;
+          border-radius: 10px;
+      }
+      .price {
+          font-size: 2em;
+          color: #6e48aa;
+          font-weight: bold;
+          margin: 20px 0;
+      }
+      .bonus {
+          color: #ff6b6b;
+          font-weight: bold;
       }
   </style>
 </head>
 <body>
+<div class="container">
+  <header>
+    <h1>Профессиональный курс по Node.js</h1>
+    <p class="subtitle">С нуля до backend-разработчика за 3 месяца</p>
+    <a href="#register" class="cta-button">Записаться сейчас</a>
+  </header>
 
-<header>
-  <h1>Welcome to My Webpage</h1>
-</header>
+  <section>
+    <h2>Почему стоит выбрать наш курс?</h2>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🚀</div>
+        <h3>Практические навыки</h3>
+        <p>Научись создавать реальные приложения на Node.js, Express и MongoDB</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">👨‍💻</div>
+        <h3>Поддержка ментора</h3>
+        <p>Опытные разработчики помогут на каждом этапе обучения</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📁</div>
+        <h3>Портфолио проектов</h3>
+        <p>5 реальных проектов в портфолио к концу курса</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">💼</div>
+        <h3>Трудоустройство</h3>
+        <p>Помощь в составлении резюме и подготовке к собеседованиям</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">📅</div>
+        <h3>Гибкий график</h3>
+        <p>Учись в удобное время с пожизненным доступом к материалам</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">🎓</div>
+        <h3>Сертификат</h3>
+        <p>Официальный сертификат об окончании курса</p>
+      </div>
+    </div>
+  </section>
 
-<nav>
-  <a href="#">Home</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-</nav>
+  <section class="testimonials">
+    <h2>Отзывы наших студентов</h2>
+    <div class="testimonial">
+      <p>"После этого курса я смог устроиться на позицию Junior Backend Developer. Материал подается очень доступно!"</p>
+      <p class="author">— Иван Петров</p>
+    </div>
+    <div class="testimonial">
+      <p>"Лучший курс по Node.js, который я встречал. Особенно понравились практические задания и разбор ошибок."</p>
+      <p class="author">— Анна Смирнова</p>
+    </div>
+  </section>
 
-<main>
-  <h2>Our Services</h2>
-  <ul>
-    <li>Web Design</li>
-    <li>Web Development</li>
-    <li>SEO Optimization</li>
-    <li>Content Marketing</li>
-  </ul>
+  <section id="program">
+    <h2>Программа курса</h2>
+    <ul>
+      <li>🔹 Основы JavaScript для серверной разработки</li>
+      <li>🔹 Введение в Node.js и npm</li>
+      <li>🔹 Работа с Express.js</li>
+      <li>🔹 Базы данных: MongoDB и PostgreSQL</li>
+      <li>🔹 Аутентификация и авторизация</li>
+      <li>🔹 REST API и GraphQL</li>
+      <li>🔹 Оптимизация и безопасность</li>
+      <li>🔹 Деплой приложений</li>
+      <li>🔹 Работа в команде с Git</li>
+    </ul>
+    <p class="bonus">Бонус: 2 месяца подписки на облачный хостинг для ваших проектов!</p>
+  </section>
 
-  <h2>Contact Us</h2>
-  <p>
-    You can reach us at:
-    <br>
-    Email: <a href="mailto:info@example.com">info@example.com</a>
-    <br>
-    Phone: +1-555-123-4567
-  </p>
-  </main>
+  <section id="register" style="text-align: center;">
+    <h2>Готовы начать?</h2>
+    <p class="price">19,990 руб. <span style="text-decoration: line-through; color: #777; font-size: 0.7em;">24,990 руб.</span></p>
+    <p>Специальная цена действует только до конца месяца!</p>
+    <a href="#" class="cta-button">Записаться на курс</a>
+  </section>
 
   <footer>
-    <p>&copy; 2024 My Awesome Webpage. All rights reserved.</p>
+    <p>© 2023 Школа программирования | Все права защищены</p>
+    <p>Телефон: +7 (123) 456-78-90 | Email: info@node-course.ru</p>
   </footer>
-
+</div>
 </body>
 </html>
