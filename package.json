@@ -6,6 +6,8 @@
   "scripts": {
     "build": "nest build",
     "start": "nest start",
+    "start:client": "cross-env NODE_ENV=client nest start",
+    "start:prod": "cross-env NODE_ENV=production nest start",
     "lint": "eslint ./src --max-warnings=0"
   },
   "prettier": {
@@ -16,6 +18,8 @@
     "endOfLine": "lf"
   },
   "devDependencies": {
+    "@types/node": "^22.13.17",
+    "cross-env": "^7.0.3",
     "eslint": "^9.22.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-prettier": "^5.2.3",
@@ -31,9 +35,9 @@
     "@nestjs/platform-fastify": "^11.0.12",
     "@nestjs/schedule": "^5.0.1",
     "@nestjs/sequelize": "^11.0.0",
+    "@nestjs/serve-static": "^5.0.3",
     "@nestjs/swagger": "^11.0.7",
     "@types/dotenv": "^8.2.3",
-    "@types/node": "^22.13.11",
     "@typescript-eslint/eslint-plugin": "^8.27.0",
     "@typescript-eslint/parser": "^8.27.0",
     "class-transformer": "^0.5.1",
